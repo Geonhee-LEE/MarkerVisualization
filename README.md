@@ -22,7 +22,7 @@ marker_visualization_ = std::make_shared<MarkerVisualization>(private_nh);
     bPoints.y = last_pose.position.y;
 
     scales scale = XXLARGE;
-    marker_visualization_->publishLine(aPoints, bPoints, color, scale);
+    marker_visualization_->publishLine(aPoints, bPoints, GREEN, scale);
 
     marker_visualization_->trigger();
 ```
