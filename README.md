@@ -24,5 +24,14 @@ marker_visualization_ = std::make_shared<MarkerVisualization>(private_nh);
     scales scale = XXLARGE;
     marker_visualization_->publishLine(aPoints, bPoints, GREEN, scale);
 
+
+    std::size_t id = 0;
+    geometry_msgs::Pose pose;
+    pose.position.x = poses[i].x;
+    pose.position.y = poses[i].y;
+    pose.orientation = tf::createQuaternionMsgFromYaw(poses[i].theta);
+    marker_visualization_->publishArrow(pose, id);
+    id++;
+
     marker_visualization_->trigger();
 ```
